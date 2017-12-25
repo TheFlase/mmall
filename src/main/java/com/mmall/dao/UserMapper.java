@@ -37,4 +37,20 @@ public interface UserMapper {
      * @return
      */
     User selectLogin(@Param("username") String username, @Param("password") String password);
+
+    /**
+     * 找回密码:根据用户名查找问题
+     * @param username
+     * @return
+     */
+    String selectQuestionByUsername(String username);
+
+    /**
+     * 找回密码:校验答案是否正确
+     * @param username
+     * @param question
+     * @param answer
+     * @return
+     */
+    int checkAnswer(@Param("username") String username,@Param("question") String question,@Param("answer") String answer);
 }

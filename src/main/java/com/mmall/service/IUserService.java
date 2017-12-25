@@ -29,4 +29,20 @@ public interface IUserService {
      * @return
      */
     public ServerResponse<String> checkValid(String str,String type);
+
+    /**
+     * 通过用户名查找忘记密码的问题
+     * @param username
+     * @return
+     */
+    public ServerResponse<String> selectQuestionByUsername(String username);
+
+    /**
+     * 校验回答问题是否正确
+     * @param username
+     * @param question
+     * @param answer
+     * @return
+     */
+    public ServerResponse<String> checkAnswer(String username,String question,String answer);
 }
